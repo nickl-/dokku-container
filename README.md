@@ -39,8 +39,15 @@ If you have access you can simply add the container id `99f04e250632` to `$DOCKE
 Standard dokku plugin installation will suffice:
 
     $ cd /var/lib/dokku/plugins
-    $ git clone <git url>
+    $ git clone https://github.com/nickl-/dokku-container.git container 
     $ dokku plugins-install
+
+If you see the following line in the output from `dokku help` you are green to go.
+
+    $ dokku help
+    ...
+    container:create <app>      Create a CONTAINER file for the APP based on last container id
+    ...
 
 ##usage
 

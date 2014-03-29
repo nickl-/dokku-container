@@ -1,0 +1,15 @@
+#!/bin/bash
+#set -e;
+
+APP=$2
+
+case "$1" in
+  container:create)
+    [[ ! -f /home/dokku/$APP/CONTAINER ]] && docker ps -n 1|awk '!/CONTAINER/{print $1}' > /home/dokku/$APP/CONTAINER
+    ;;
+  help)
+    cat && cat<<EOF
+    container:create <app>                          Create a CONTAINER file for the APP based on last container id 
+EOF
+    ;;
+esac
